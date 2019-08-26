@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Me and My Humble Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+                    <span class="image avatar"><a href="../html/easter_egg.html" class="image" target="_blank"><img src="../images/avatar.jpg" alt="" /></a></span>
+					<h1 id="logo"><a href="../index.html">Alex (Jiahao) Huo</a></h1>
+					<p>Aspired Data Scientist</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html" class="active">About Me</a></li>
+                        <li><a href="../index.html#topics">Topics I Have Covered</a></li>
+                        <li><a href="../index.html#skillset">Skills I Have Accquired</a></li>
+						<li><a href="../index.html#projects">Projects I Have Done</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/jiahaohuo/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/jhuo831alex" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="mailto:jiahao.h@columbia.edu" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+            </section>
+
+            <div id="wrapper">
+                <div id="main">
+
+                    <section id="intro">
+
+                        <div class="container">
+                            <header class="major">
+                                <h2>Predict Average Response Time of the Los Angeles Fire Department</h2>
+                            </header>
+                            <p>
+                                <em>
+                                    Implemented Gradient Boosting Decision Tree Algorithm, and tuned hyperparameters using random search in parallel.                                 </em> <br /> <br />
+                                <a href="https://github.com/jhuo831alex/KaggleCompetition_LAPD-Ranked3" class="button primary" target="_blank">View on GitHub</a>
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <div class="container">
+
+                            <h3>About the Project</h3>
+                            <p>
+                                    The main goal of this project was to predict average response time of the Los Angeles Fire Department. 
+                                    The evaluation metric was MSE.
+                            </p>
+
+                            <h3>Methodology</h3>
+                            <ul>
+                                <li>Imported external data on district information from <a href="https://www.latimes.com/" target="_blank"><i>LA Times</i></a> to get district information of LA</li>
+                                <li>Engineered new features using regular expression, aggregation and etc.</li>
+                                <li>Selected features through repeatedly adding features to baseline model and see which one contributed the most</li>
+                                <li>Implemented regression XGBoost with selected 10 features</li>
+                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
+                                    <li>6 were original features, 4 were newly created</li>
+                                </ul> 
+                                <li>Tuned hyperparameter with parallel mapping (hyperparameter tuned: eta, nrounds, max_depth)</li>
+                                <li>10-fold cross validation in parallel to reduce overfitting</li>
+                                <li>Postprocessed predictions by removing negative values</li>
+                                <li><em><b>Ranked 3rd/92 teams</b></em></li>
+                            </ul>
+                            
+                            <h3>Further Details</h3>
+                            <p>For more information, check out 
+                                the Project Markdown <a href="../files/lapd/Project_Report.pdf" target="_blank"><b><em>here</em></b></a>
+                                and the Presentation Deck <a href="../files/lapd/Presentation_Deck.pdf" target="_blank"><b><em>here</em></b></a>.
+                            </p>
+                            
+                            <p>
+                                <a href="../index.html#projects" class="button alt">Back</a>
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+
+                <section id="footer">
+                    <div class="container">
+                        <ul class="copyright">
+                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+            
+    </body>
+</html>
