@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Me and My Humble Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+                    <span class="image avatar"><a href="../html/easter_egg.html" class="image" target="_blank"><img src="../images/avatar.jpg" alt="" /></a></span>
+					<h1 id="logo"><a href="https://jhuo831alex.github.io/">Alex (Jiahao) Huo</a></h1>
+					<p>Aspired Data Scientist</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="https://jhuo831alex.github.io/" class="active">About Me</a></li>
+                        <li><a href="https://jhuo831alex.github.io/#topics">Topics I Have Covered</a></li>
+                        <li><a href="https://jhuo831alex.github.io/#skillset">Skills I Have Accquired</a></li>
+						<li><a href="https://jhuo831alex.github.io/#projects">Projects I Have Done</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/jiahaohuo/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/jhuo831alex" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="mailto:jiahao.h@columbia.edu" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+            </section>
+
+            <div id="wrapper">
+                <div id="main">
+
+                    <section id="intro">
+                        <div class="container">
+                            <header class="major">
+                                <h2>Identify Cheaters in game PlayerUnknown’s Battlegrounds (PUBG)</h2>
+                            </header>
+                            <p>
+                                <em>
+                                    Implemented Anomaly Detection algorithms, including One-Class SVM and Isolation Forest, to detect cheaters, and defined metrics to evaluate the results of unsupervised learning models.
+                                </em> <br /> <br />
+                                <a href="https://github.com/jhuo831alex/GameAnalytics_PUBG" class="button primary">View on GitHub</a>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="container">
+                            <h3>About the Project</h3>
+                            <p>
+                                The main goal of this project was to identify cheaters in PlayerUnknown’s Battlegrounds (PUBG), one of the most popular games in the world, using anomaly detection. 
+                                The analysis was based on the assumption that cheaters are players who have absurdly above-average performance in games.
+                            </p>
+                            <h3>Methodology</h3>
+                            <ul>
+                                <li>Data: 4 million players’ match summaries collected through PUBG Developer API with 29 features</li>
+                                <li>Identified top features that were correlated with winning the game using LightGBM</li>
+                                <li>Detected outliers via data profiling</li>
+                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
+                                    <li>Visualized top features using <i>Plotly</i></li>
+                                    <li>Looked at extreme values via calculating quantiles of each features</li>
+                                </ul>
+                                <li>Treated the outliers found by data profiling as the ground truth</li>
+                                <li>Used One-Class SVM and Isolation Forest to automatically detect outliers</li>
+                                <li>Tuned and evaluated models through computing the true positive rates (what proportion of outliers found by data profiling are also identified as anomaly by models)</li>
+                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
+                                    <li>SVM: 98.87%</li>
+                                    <li>Isolation Forest: 91.27%</li>
+                                </ul> 
+                                <li>Integrated the results of two models</li>
+                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
+                                    <li>Computed overlap coefficient of the outliers by One-Class SVM and Isolation Forest: 64.39%</li>
+                                    <li>Regarded the overlapping population to be highly likely to be cheaters</li>
+                                </ul> 
+                            </ul>
+                            <h3>Further Details</h3>
+                            <p>For more information, check out 
+                                Presentation Markdown <a href="../files/pubg/Presentation_Markdown.html"><b><em>here</em></b></a>
+                                and Project Report <a href="../files/pubg/Project_Report.pdf"><b><em>here</em></b></a>.
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+
+                <section id="footer">
+                    <div class="container">
+                        <ul class="copyright">
+                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+            
+    </body>
+</html>
