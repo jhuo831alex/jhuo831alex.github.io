@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Me and My Humble Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+                    <span class="image avatar"><a href="../html/easter_egg.html" class="image" target="_blank"><img src="../images/avatar.jpg" alt="" /></a></span>
+					<h1 id="logo"><a href="../index.html">Alex (Jiahao) Huo</a></h1>
+					<p>Aspired Data Scientist</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html" class="active">About Me</a></li>
+                        <li><a href="../index.html#topics">Topics I Have Covered</a></li>
+                        <li><a href="../index.html#skillset">Skills I Have Accquired</a></li>
+						<li><a href="../index.html#projects">Projects I Have Done</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/jiahaohuo/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/jhuo831alex" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="mailto:jiahao.h@columbia.edu" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+            </section>
+
+            <div id="wrapper">
+                <div id="main">
+
+                    <section id="intro">
+
+                        <div class="container">
+                            <header class="major">
+                                <h2>Customized Expedia Hotel Recommendations </h2>
+                            </header>
+                            <p>
+                                <em>
+                                    Used clustering method K-Means for user segmentation on <i>Expedia.com</i>, and identified behavioral differences in each segment to customize hotel recommendations.                                 
+                                </em> <br /> <br />
+                                <a href="https://github.com/jhuo831alex/DataFest2017_Expedia" class="button primary" target="_blank">View on GitHub</a>
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <div class="container">
+
+                            <h3>About the Project</h3>
+                            <p>
+                                The main goal of this project was to provide Expedia return users with cutomized hotel recommendations to increase booking rates. 
+                                We segmented users into three groups using clustering methods and accordingly customized recommendations.
+                            </p>
+
+                            <h3>Methodology</h3>
+                            <ul>
+                                <li>Data was provided by <i><a href="https://www.expedia.com/" target="_blank">Expedia.com</a></i> (data size: 1.3GB)</li>
+                                <li>Reduced data dimensionality with PCA</li>
+                                <li>Used k-means clustering algorithm using three principle components</li>
+                                <li>Ran algorithm several times to ensure robustness</li>
+                                <li>Picked number of clusters using within groups sum of squares and elbow method (# of cluster: 3)</li>
+                                <li>Visualized clusters with 3D scatter plot using <i>Plotly</i></li>
+                                <li>Identified users' behavior within each group and customized recommendations correspondingly</li>
+                            </ul>
+                            <p><em>*This project was done in 48 hours, and was presented to statisticians and Expedia data scientists. </em></p>
+                            
+                            <h3>Further Details</h3>
+                            <p>For more information, check out 
+                                the Presentation Deck <a href="../files/expedia/Presentation_Deck.pdf" target="_blank"><b><em>here</em></b></a>.
+                            </p>
+
+                            <h3>About DataFest</h3>
+                            <p>
+                                ASA DataFestTM is a data hackathon for undergraduate students, sponsored by the American Statistical Association and founded at UCLA, in 2011. 
+                                <br /> <br />
+                                For more information, check out the official website 
+                                <b><em><a href="http://datafest.stat.ucla.edu/" target="_blank">here</a></em></b> 
+                            </p>
+                            <p>
+                                <a href="../index.html#projects" class="button alt">Back</a>
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+
+                <section id="footer">
+                    <div class="container">
+                        <ul class="copyright">
+                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+            
+    </body>
+</html>
