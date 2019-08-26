@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Me and My Humble Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+                    <span class="image avatar"><a href="../html/easter_egg.html" class="image" target="_blank"><img src="../images/avatar.jpg" alt="" /></a></span>
+					<h1 id="logo"><a href="../index.html">Alex (Jiahao) Huo</a></h1>
+					<p>Aspired Data Scientist</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html" class="active">About Me</a></li>
+                        <li><a href="../index.html#topics">Topics I Have Covered</a></li>
+                        <li><a href="../index.html#skillset">Skills I Have Accquired</a></li>
+						<li><a href="../index.html#projects">Projects I Have Done</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/jiahaohuo/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/jhuo831alex" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="mailto:jiahao.h@columbia.edu" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+            </section>
+
+            <div id="wrapper">
+                <div id="main">
+
+                    <section id="intro">
+
+                        <div class="container">
+                            <header class="major">
+                                <h2>Classify Buyers and Non-buyers on <i>Edmunds.com</i></h2>
+                            </header>
+                            <p>
+                                <em>
+                                    Implemented binary logistic classification using XGBoost, and tuned hyperparameters with random search in parallel.                                 
+                                </em> <br /> <br />
+                                <a href="https://github.com/jhuo831alex/DataFest2015_Edmunds" class="button primary" target="_blank">View on GitHub</a>
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <div class="container">
+
+                            <h3>About the Project</h3>
+                            <p>
+                                The main goal of this project was to answer one question: "If a customer leaves information on Edmunds.com for a particular car, is he/she going to buy the car?". 
+                                By determining how likely a certain user will buy cars, we then decided if to pursue this user or not.
+                            </p>
+
+                            <h3>Methodology</h3>
+                            <ul>
+                                <li>Data was provided by <i><a href="https://www.edmunds.com/" target="_blank">Edmunds.com</a></i> (data size: 1.7GB & 5 Tables)</li>
+                                <li>Engineered 12 new features from 5 tables</li>
+                                <li>Prepared dataset for modeling (missing value removal, outlier removal, bucketing, onehot encoding, and etc.) </li>
+                                <li>Reduced data dimensionality with Chi-square test</li>
+                                <li>Standardized numeric features</li>
+                                <li>Activated parallel computing capabilities</li>
+                                <li>Implemented binary logistic classification using XGBoost</li>
+                                <li>Tuned hyperparameter using random search (Hyperparameter tuned: eta, nrounds, max_depth, eval_metric='AUC')</li>
+                                <li>Used 3-fold cross validation to avoid overfitting</li>
+                                <li><em><b>Model accuracy: 86.8%</b></em></li>
+                            </ul>
+                            
+                            <h3>Further Details</h3>
+                            <p>For more information, check out 
+                                the Presentation Deck <a href="../files/edmunds/Presentation_Deck.pdf" target="_blank"><b><em>here</em></b></a>
+                                and the Project Report <a href="../files/edmunds/Project_Report.pdf" target="_blank"><b><em>here</em></b></a>.
+                            </p>
+
+                            <h3>About DataFest</h3>
+                            <p>
+                                ASA DataFestTM is a data hackathon for undergraduate students, sponsored by the American Statistical Association and founded at UCLA, in 2011. 
+                                <br /> <br />
+                                For more information, check out the official website 
+                                <b><em><a href="http://datafest.stat.ucla.edu/" target="_blank">here</a></em></b> 
+                            </p>
+                            <p>
+                                <a href="../index.html#projects" class="button alt">Back</a>
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+
+                <section id="footer">
+                    <div class="container">
+                        <ul class="copyright">
+                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+            
+    </body>
+</html>
