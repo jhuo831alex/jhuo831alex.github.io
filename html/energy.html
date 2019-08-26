@@ -39,13 +39,13 @@
 
                         <div class="container">
                             <header class="major">
-                                <h2>Identify Cheaters in game PlayerUnknown’s Battlegrounds (PUBG)</h2>
+                                <h2>Improving Community Health with Renewable Energy Source</h2>
                             </header>
                             <p>
                                 <em>
-                                    Implemented Anomaly Detection algorithms, including One-Class SVM and Isolation Forest, to detect cheaters, and defined metrics to evaluate the results of unsupervised learning models.
+                                    Applied Panel Regression, Breusch-Pagan test, the Hausman test, and the Granger Causality test to examine the relationship between non-renewable energy consumption and asthma prevalence.
                                 </em> <br /> <br />
-                                <a href="https://github.com/jhuo831alex/GameAnalytics_PUBG" class="button primary" target="_blank">View on GitHub</a>
+                                <a href="https://github.com/jhuo831alex/TheDataOpen_Renewable-Energy" class="button primary" target="_blank">View on GitHub</a>
                             </p>
                         </div>
 
@@ -55,35 +55,25 @@
                         <div class="container">
                             <h3>About the Project</h3>
                             <p>
-                                The main goal of this project was to identify cheaters in PlayerUnknown’s Battlegrounds (PUBG), one of the most popular games in the world, using anomaly detection. 
-                                The analysis was based on the assumption that cheaters are players who have absurdly above-average performance in games.
+                                The main goal of this project was to explore the relationship between the consumption of non-renewable energy and prevalence of respiratory diseases, especially asthma. 
+                                The ultimate aim was to prove the causality: The more non-renewable energy consumed, the higher prevelance of asthma.
                             </p>
                             <h3>Methodology</h3>
                             <ul>
-                                <li>Data: 4 million players’ match summaries collected through PUBG Developer API with 29 features</li>
-                                <li>Identified top features that were correlated with winning the game using LightGBM</li>
-                                <li>Detected outliers via data profiling</li>
+                                <li>The following relationships were carefully examined:</li>
                                 <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>Visualized top features using <i>Plotly</i></li>
-                                    <li>Looked at extreme values via calculating quantiles of each features</li>
-                                </ul>
-                                <li>Treated the outliers found by data profiling as the ground truth</li>
-                                <li>Used One-Class SVM and Isolation Forest to automatically detect outliers</li>
-                                <li>Tuned and evaluated models through computing the true positive rates (what proportion of outliers found by data profiling are also identified as anomaly by models)</li>
-                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>SVM: 98.87%</li>
-                                    <li>Isolation Forest: 91.27%</li>
+                                    <li>causality between renewable energy source consumption and air quality</li>
+                                    <li>causality between air quality and asthma rates</li>
+                                    <li>causality between renewable energy consumption and reduction in toxic air components</li>
+                                    <li>causality between air components and air quality</li>
                                 </ul> 
-                                <li>Integrated the results of two models</li>
-                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>Computed overlap coefficient of the outliers by One-Class SVM and Isolation Forest: 64.39%</li>
-                                    <li>Regarded the overlapping population to be highly likely to be cheaters</li>
-                                </ul> 
+                                <li>Applied Panel Regression, Breusch-Pagan test, the Hausman test, and the Granger Causality test</li>
                             </ul>
+                            <p><em>*The analysis and a 12-page-long research paper was completed in a limit of 8 hours.</em></p>
+                            
                             <h3>Further Details</h3>
                             <p>For more information, check out 
-                                the Presentation Markdown <a href="../files/pubg/Presentation_Markdown.html"><b><em>here</em></b></a>
-                                and the Project Report <a href="../files/pubg/Project_Report.pdf"><b><em>here</em></b></a>.
+                                the Research Paper <a href="../files/energy/Research_Paper.pdf"><b><em>here</em></b></a>.
                             </p>
                             <p>
                                 <a href="https://jhuo831alex.github.io/#projects" class="button alt">Back</a>
