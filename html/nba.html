@@ -39,13 +39,13 @@
 
                         <div class="container">
                             <header class="major">
-                                <h2>Predict Average Response Time of the Los Angeles Fire Department</h2>
+                                <h2>A Cost Efficient Approach to Building an NBA Team</h2>
                             </header>
                             <p>
                                 <em>
-                                    Implemented Gradient Boosting Decision Tree Algorithm, and tuned hyperparameters using random search in parallel.                                 
+                                    Devised a ranking algorithm with self-defined KPIs and distance metrics to evaluate players’ performance and affordability, and accordingly built a "Fantasy Team".                                 
                                 </em> <br /> <br />
-                                <a href="https://github.com/jhuo831alex/KaggleCompetition_LAPD-Ranked3" class="button primary" target="_blank">View on GitHub</a>
+                                <a href="https://github.com/jhuo831alex/Research_NBA-Player-Analytics" class="button primary" target="_blank">View on GitHub</a>
                             </p>
                         </div>
 
@@ -54,33 +54,36 @@
                     <section>
                         <div class="container">
 
-                            <h3>About the Project</h3>
+                            <h3>About the Research</h3>
                             <p>
-                                    The main goal of this project was to predict average response time of the Los Angeles Fire Department. 
-                                    The evaluation metric was MSE.
+                                While all players in the NBA are extremely talented athletes, many hone their skills to the point at which their expertise cannot be denied and simply demand massive salaries. 
+                                This research presents a possible solution to the old of problem of creating the best possible performing sports team while at the same time minimizing the cost of the team.
                             </p>
 
                             <h3>Methodology</h3>
                             <ul>
-                                <li>Imported external data on district information from <a href="https://www.latimes.com/" target="_blank"><i>LA Times</i></a> to get district information of LA</li>
-                                <li>Engineered new features using regular expression, aggregation and etc.</li>
-                                <li>Selected features through repeatedly adding features to baseline model and see which one contributed the most</li>
-                                <li>Implemented regression XGBoost with selected 10 features</li>
+                                <li>Important Features: Field Goal Percentage (FGP), Defense Rebound (DREB),Offense Rebound (OREB), Rebound(REB), Assist (AST), Turn Over (TOV), Block (BLK), and Field Goal Made (FGM)</li>
+                                <li>Picked out most relevant features for each of the positions</li>
+                                <li>Ranked the selected Statistics within each position</li>
+                                <li>Calculated the weighted average of the ranks</li>
+                                <li>Created a plot for each position:</li>
                                 <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>6 were original features, 4 were newly created</li>
+                                    <li>x axis: standardized weighted rank; y axis: standardized salary</li>
                                 </ul> 
-                                <li>Tuned hyperparameter with parallel mapping (hyperparameter tuned: eta, nrounds, max_depth)</li>
-                                <li>10-fold cross validation in parallel to reduce overfitting</li>
-                                <li>Postprocessed predictions by removing negative values</li>
-                                <li><em><b>Ranked 3rd/92 teams</b></em></li>
+                                <li>Compared Euclidean Distances between each point and the origin</li>
+                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
+                                    <li>Origin (Ideal player): free and has the smallest standardized weighted rank score (best performance)</li>
+                                </ul> 
+                                <li>Selected the top 3 players for each of the positions</li>
+                                <li>Visualized sweet spots and unsweet spots for the NBA Finalists with Spatial Heat Maps and compared them with the team created by ranking algorithm</li>
                             </ul>
                             
                             <h3>Further Details</h3>
                             <p>For more information, check out 
-                                the Project Markdown <a href="../files/lapd/Project_Report.pdf" target="_blank"><b><em>here</em></b></a>
-                                and the Presentation Deck <a href="../files/lapd/Presentation_Deck.pdf" target="_blank"><b><em>here</em></b></a>.
+                                the Research Paper <a href="../files/nba/Report.pdf" target="_blank"><b><em>here</em></b></a>
+                                and the Presentation Deck <a href="../files/nba/Project_Deck.pdf" target="_blank"><b><em>here</em></b></a>.
                             </p>
-
+                            
                             <p>
                                 <a href="../index.html#projects" class="button alt">Back</a>
                             </p>
