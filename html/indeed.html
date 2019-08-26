@@ -39,13 +39,13 @@
 
                         <div class="container">
                             <header class="major">
-                                <h2>Identify Cheaters in game PlayerUnknown’s Battlegrounds (PUBG)</h2>
+                                <h2>Introduce Revenue Maximization Algorithm for <i>Indeed.com</i></h2>
                             </header>
                             <p>
                                 <em>
-                                    Implemented Anomaly Detection algorithms, including One-Class SVM and Isolation Forest, to detect cheaters, and defined metrics to evaluate the results of unsupervised learning models.
+                                    Delivered a XGBoost regression model to compute business values of job postings to optimize job posting rank and revenue.
                                 </em> <br /> <br />
-                                <a href="https://github.com/jhuo831alex/GameAnalytics_PUBG" class="button primary" target="_blank">View on GitHub</a>
+                                <a href="https://github.com/jhuo831alex/DataFest2018_Indeed_BestInsights" class="button primary" target="_blank">View on GitHub</a>
                             </p>
                         </div>
 
@@ -53,37 +53,37 @@
 
                     <section>
                         <div class="container">
+
                             <h3>About the Project</h3>
                             <p>
-                                The main goal of this project was to identify cheaters in PlayerUnknown’s Battlegrounds (PUBG), one of the most popular games in the world, using anomaly detection. 
-                                The analysis was based on the assumption that cheaters are players who have absurdly above-average performance in games.
+                                    The main goal of this project was to maximize Indeed’s revenue. 
+                                    Since Indeed’s business model is PayPerClick, we wanted to achieve the goal by increasing number of clicks of job postings. 
+                                    Consequently, we accessed the potential business value of a job upon posting and correspondingly optimized order of job postings.
                             </p>
+
                             <h3>Methodology</h3>
                             <ul>
-                                <li>Data: 4 million players’ match summaries collected through PUBG Developer API with 29 features</li>
-                                <li>Identified top features that were correlated with winning the game using LightGBM</li>
-                                <li>Detected outliers via data profiling</li>
-                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>Visualized top features using <i>Plotly</i></li>
-                                    <li>Looked at extreme values via calculating quantiles of each features</li>
-                                </ul>
-                                <li>Treated the outliers found by data profiling as the ground truth</li>
-                                <li>Used One-Class SVM and Isolation Forest to automatically detect outliers</li>
-                                <li>Tuned and evaluated models through computing the true positive rates (what proportion of outliers found by data profiling are also identified as anomaly by models)</li>
-                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>SVM: 98.87%</li>
-                                    <li>Isolation Forest: 91.27%</li>
-                                </ul> 
-                                <li>Integrated the results of two models</li>
-                                <ul style="padding-left:30px;list-style-type:circle;margin: 0 0;">
-                                    <li>Computed overlap coefficient of the outliers by One-Class SVM and Isolation Forest: 64.39%</li>
-                                    <li>Regarded the overlapping population to be highly likely to be cheaters</li>
-                                </ul> 
+                                <li>Data was provided by <i><a href="https://www.indeed.com/" target="_blank">Indeed.com</a></i> (data size: 2.58GB)</li>
+                                <li>Defined number of clicks and max day posted as two main KPIs of potential business value of a job posting</li>
+                                <li>Implemented XGBoost regression to derive significant features and corresponding weights for two KPIs</li>
+                                <li>Regarded the significant features as the driving factors of potential business value of job postings</li>
+                                <li>Computed potential values to any future job posting using important features and weightings (score 0-100)</li>
+                                <li>Optimized order of job postings on <i>indeed.com</i> by ascending order of potential values</li>
+                                <li><em><b>Won Best Insights Award</b></em></li>
                             </ul>
+                            <p><em>*This project was done in 48 hours, and was presented to statisticians and Indeed data scientists. </em></p>
+                            
                             <h3>Further Details</h3>
                             <p>For more information, check out 
-                                the Presentation Markdown <a href="../files/pubg/Presentation_Markdown.html" target="_blank"><b><em>here</em></b></a>
-                                and the Project Report <a href="../files/pubg/Project_Report.pdf" target="_blank"><b><em>here</em></b></a>.
+                                the Presentation Deck <a href="../files/indeed/Deck.pdf" target="_blank"><b><em>here</em></b></a>.
+                            </p>
+
+                            <h3>About DataFest</h3>
+                            <p>
+                                ASA DataFestTM is a data hackathon for undergraduate students, sponsored by the American Statistical Association and founded at UCLA, in 2011. 
+                                <br /> <br />
+                                For more information, check out the official website 
+                                <b><em><a href="http://datafest.stat.ucla.edu/" target="_blank">here</a></em></b> 
                             </p>
                             <p>
                                 <a href="../index.html#projects" class="button alt">Back</a>
