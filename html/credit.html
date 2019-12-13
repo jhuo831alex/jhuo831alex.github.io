@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Me and My Humble Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+                    <span class="image avatar"><a href="../html/easter_egg.html" class="image"><img src="../images/avatar.jpg" alt="" /></a></span>
+					<h1 id="logo"><a href="../index.html">Alex (Jiahao) Huo</a></h1>
+					<p>Aspired Data Scientist</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html" class="active">About Me</a></li>
+                        <li><a href="../index.html#topics">Topics I Have Covered</a></li>
+                        <li><a href="../index.html#skillset">Skills I Have Accquired</a></li>
+						<li><a href="../index.html#projects">Projects I Have Done</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/jiahaohuo/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/jhuo831alex" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="mailto:jiahao.h@columbia.edu" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+            </section>
+
+            <div id="wrapper">
+                <div id="main">
+
+                    <section id="intro">
+
+                        <div class="container">
+                            <header class="major">
+                                <h2>Customer-At-Risk Model for CreditRiskMonitor</h2>
+                            </header>
+                            <p>
+                                <em><b>
+                                    Developed a Churn Model using Random Forest using H2o                               
+                                </b></em> 
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <div class="container">
+
+                            <h3>Problem Definition</h3>
+                            <p>
+                                In this project, we worked with our client, CreditRiskMonitor, a company that provides financial risk and news monitoring as a subscription service. 
+                                Churning users represent a significant cost for CreditRiskMonitor given it’s subscription model and the value associated with renewals. 
+                                Thus, it is important to create a data-driven model that categorizes high attrition risk customers and key factors that correlate with that higher risk profile. 
+                                Based on such a model, CreditRiskMonitor could organize its resources according to these factors and optimize retention efforts. 
+                                To predict customers with high risk of churning and give time for our client to retain these customers, we decided to do predictive analysis on the data 6 months in advance of the contract renewal dates to identify the customers that are most likely to cancel their subscriptions at next renewal. 
+                                Using the model, we can provide recommendations to CreditRiskMonitor on how to mobilize its resources. We thought customer longevity, contract size and user activity levels would be key factors.
+                            </p>
+
+                            <h3>Exploratory Analysis</h3>
+                            <p>
+                                For this analysis, CreditRiskMonitor provided us with a dataset that contained contract details for all of their clients over the past 5 years. 
+                                This dataset included descriptive characteristics about each client (e.g. number of employees, market capitalization, geography, previous contract count) as well as product engagement metrics (e.g. logins, page views, etc.) 
+                                <br/><br/>
+                                In an effort to better understand the dataset, we conducted an exploratory analysis which yielded the following observations:
+                            </p>
+                            <ul>
+                                <li>Contracts that were held by more tenured clients had lower churn rates.</li>
+                                <li>Contracts that paid for less seats had higher churn rates.</li>
+                                <li>Contracts associated with greater user engagement, as measured by monthly user logins, had lower churn rates.</li>
+                                <li>Clients that were on non-standard contracts (duration greater than 12 months) had higher churn rates. </li>
+                            </ul>
+                            <img src="../images/credit1.png" alt="EDA" width=800><br/><br/>
+                            
+                            <h3>Data Pre-Processing</h3>
+                            <p>The data cleaning process consisted of the following steps:</p>
+                            <ol type="1">
+                                <li>Separate the data for clients into individual rows for each contract renewal period (12-15 months)</li>
+                                <li>Define churn as two consecutive months without renewal after a contract expires, and create a binary classification variable </li>
+                                <li>Isolate the input data for the first half of the contract period and compute summary transformations (eg. average, min, max, % change) as follows:
+                                    <img src="../images/credit2.png" alt="Data Cleaning" width=800><br/><br/>
+                                </li>
+                                <li>For Page Hits data, use Principal Components Analysis to reduce the number of features from 106 to 2</li>
+                                <li>For NA values, add a new boolean variable to indicate missing data and then fill the NA value with 0, assuming that NAs indicate little to no activity</li>
+                                <li>Create dummy variables for categorical variables</li>
+                                <li>Remove rows with poor data quality (negative values, percentages above 100%, contract lengths outside range)</li>
+                            </ol>
+
+                            <h3>Model</h3>
+                            <p>
+                                The method used for the churn model was Random Forest due to its easy interpretability. Four hyper-parameters (max depth of trees, split criterion, minimum samples per leaf, minimum samples to split) were tuned using grid search, and 10-fold cross-validation was used to control overfitting. The score used for the model was F1 as the main focus was to predict customer churn, namely the true positives.
+                                <br/><br/>
+                                Our best model has 0.89 AUC and 0.36 F1. 
+                                <img src="../images/credit3.png" alt="AUC" width=500><br/>
+                                Out of the 101 churn cases, the model was able to capture half of the customers who churned. 
+                                <img src="../images/credit4.png" alt="Confusion Matrix" width=800><br/>
+                                If we only look at the first 20 predictions sorted in decreasing order by the probabilities produced by the model, the performance of the model enhanced as 20 out of 30 predictions are actual future churned users. This translated to a true positive rate of 67%.
+                                <img src="../images/credit5.png" alt="Prbability Thresholds" width=800><br/>
+                                Random Forest also shed light on what the important customer attributes were when evaluating their likelihood to churn. The most important one was customer age, how long the customer has been using the product, which is a proxy of customers’ loyalty. 
+                                <img src="../images/credit6.png" alt="Feature Importance" width=800><br/>
+                            </p>
+
+                            <h3>Conclusion</h3>
+                            <p>
+                                Our recommendation to the management team at CreditRiskMonitor is to implement a “Customer-At-Risk Retention” program with the following components:
+                            </p>
+                            <ul>
+                                <li>Incorporate the model within the account management software in a way that each account that is “at-risk” of churning in 6 months gets flagged and a notification is sent to the account managers
+                                    <ul style="list-style-type:circle;">
+                                        <li>The optimum threshold should be set by CRM based on the likely success rate of the account managers to retain customers-at-risk</li>
+                                    </ul>
+                                </li>
+                                <li>Account Managers should then reach out to the subscribers asking for discussions about how they are using the service and ways to improve the perceived value proposition. Depending on the user feedback account managers can do the following:
+                                    <ul style="list-style-type:circle;">
+                                        <li>Provide training on the best use practices </li>
+                                        <li>Provide training on how the FRISK® score functions</li>
+                                        <li>Send more marketing nurtures</li>
+                                        <li>Conduct new training with the users</li>
+                                        <li>Seek out new users at the subscriber (either in the same department or in different ones)</li>
+                                        <li>Potentially travel to the subscriber for an in-person meeting (rare) </li>
+                                        <li>Consider discounting a renewal price to maintain the contract</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Additionally, CreditRiskMonitor should also take the following steps:</p>
+                            <ul>
+                                <li>Focus retention efforts on customers in their first year of using the service</li>
+                                <li>Identify the common reasons that account managers are resorting to non-standard contracts and incorporate stricter guidelines on offering an extra 3 months</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+
+                <section id="footer">
+                    <div class="container">
+                        <ul class="copyright">
+                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+            
+    </body>
+</html>
